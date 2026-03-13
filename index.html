@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+
+<!-- Pop up box -->
+<div id="contactPopup" class="popup">
+  
+  <div class="popup-box">
+    <span class="close" onclick="closeForm()">×</span>
+
+<form action="YOUR_GOOGLE_SCRIPT_URL" method="POST"> 
+    <h2>Let's Connect</h2>
+
+    <input type="text" placeholder="Your Full Name" required>
+    <input type="email" placeholder="Your Email Id" required>
+
+    <button class="send-btn">Send</button>
+
+</form>
+
+  </div>
+
+</div>
+
+<script>
+function openForm(){
+  const popup=document.getElementById("contactPopup");
+  popup.style.display="flex";
+  setTimeout(()=>popup.classList.add("show"),10);
+}
+
+function closeForm(){
+  const popup=document.getElementById("contactPopup");
+  popup.classList.remove("show");
+  setTimeout(()=>popup.style.display="none",300);
+}
+</script>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+
+<script>
+let timer;
+const nav = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  const atTop = window.scrollY === 0;
+
+  nav.classList.remove("hide"); // always show when scrolling
+  clearTimeout(timer);
+
+  if (!atTop) {
+    timer = setTimeout(() => {
+      nav.classList.add("hide"); // hide only if not at top
+    }, 3000); // 3 seconds
+  }
+});
+</script>
+
+    <a href="#" class="connect-btn" onclick="openForm(); return false;">Contact</a>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="home">
+    <h1>Bhadra Biju</h1>
+    <p>Freelancer | AI Engineer</p>
+    <div class = "hero-buttons">
+        <a href="Resume/Bhadra Biju - Resume.pdf" class="btn" download>Download Resume</a>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</header>
+
+<div class="hero-image">
+        <div class="image-bg-circle"></div>
+        <img src="images/profile1.jpeg" alt="Bhadra Biju">
+</div>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Data Science student and aspiring AI Engineer with hands-on experience in data analysis
+        and machine learning. I enjoy working with real-world data, building analytical solutions, and 
+        developing models that transform data into meaningful insights and actionable outcomes.<br><br>
+        Currently, I am exploring opportunities as a beginner-level AI engineer and freelancer,
+        where I can apply my skills in Python, data analytics, machine learning, and emerging 
+        AI technologies while continuing to learn, grow, and contribute to impactful projects.
+    </p>
+</section>
+ 
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+    <a href="https://github.com/bhadrabiju/AI-Karate-Trainer-for-Hand-Posture" target="_blank"></a>
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="images/project1.jpg" alt="Project 1">
+            <h3>Fraudulent Job Offer Detection</h3>
+            <p>
+                Fraudulent Job Offer Detection is a machine learning–based system designed to identify fake job offer emails. The application analyzes the email subject and body using Natural Language Processing (NLP) techniques and combines them with indicators such as links, attachments, fee requests, and domain similarity to detect fraudulent patterns.
+
+                The extracted features are processed using TF-IDF vectorization and classified using a Logistic Regression model to determine whether the job offer is fraudulent or genuine. The model is deployed through a Streamlit interface, allowing users to input email details and receive instant predictions.
+                <br><br>
+                🛠️ Tech Stack :
+                Python | Pandas | NumPy | TF-IDF | Scikit-learn | Logistic Regression | Streamlit |
+            </p>
+        </div>
+
+        <div class="project-card">
+            <img src="images/project2.png" alt="Project 2">
+            <h3>AI Karate Trainer for Hand Posture</h3>
+            <p>
+                🥋 AI Karate Trainer for Hand Posture
+
+                AI Karate Trainer for Hand Posture is a computer vision–based application designed to validate karate hand postures in real time. The system analyzes hand landmarks to determine whether the hand is positioned correctly and displays the corresponding karate hand symbol only when the posture meets predefined criteria.
+                    
+                This project focuses on posture accuracy rather than simple gesture recognition, helping users practice karate hand techniques independently without relying on a physical trainer.
+
+                <br><br>
+                🛠️ Tech Stack :
+                Python | NumPy | OpenCV | MediaPipe | Hand Landmark
+            </p>
+        </div>
+    </div>
+</section>
+
+<!--SKILLS SECTION-->>
+
+    <section class="skills" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+            <h3>Python</h3>
+            <p>Data Science & ML</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>SQL</h3>
+            <p>Data Analytics</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Semantic Structure & Web Layout</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Responsive Design & Flexbox/Grid</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Power BI</h3>
+            <p>Data Visualization</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span><span class="on"></span>
+                <span></span><span></span>
+            </div>
+        </div>
+
+
+
+        <div class="skill-card">
+            <h3>Excel</h3>
+            <p>Reporting & Analysis</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span><span class="on"></span>
+                <span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Machine Learning</h3>
+            <p>Model Development</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span><span class="on"></span>
+                <span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Deep Learning</h3>
+            <p>Neural Networks</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>TensorFlow</h3>
+            <p>Deep Learning</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>OpenCV</h3>
+            <p>Computer Vision</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span class="on"></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>MediaPipe</h3>
+            <p>Vision Pipelines</p>
+            <div class="level">
+                <span class="on"></span>
+                <span class="on"></span><span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>YOLO</h3>
+            <p>Object Detection</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span class="on"></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Gen AI</h3>
+            <p>LLMs & Prompting</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>RAG</h3>
+            <p>Retrieval Pipelines</p>
+            <div class="level">
+                <span class="on"></span><span class="on"></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- <UPWARD BUTTON> -->
+<button id="topBtn">⮝</button>
+
+<script>
+const btn=document.getElementById("topBtn");
+
+window.onscroll=()=>btn.style.display=scrollY>200?"block":"none";
+btn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+
+<!-- CONTACT SECTION -->
+<footer class="contact" id="contact">
+    <h2>Connect with me</h2>
+    <div class="social-links">
+        <a href="mailto:" target="_blank">
+            <i class ="fas fa-envelope"></i>
+        <a href="https://www.linkedin.com/in/bhadrabiju110" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        <a href="https://github.com/bhadrabiju" target="_blank">
+            <i class="fab fa-github"></i>
+    </div>
+    <h6>All Rights Reserved &copy; Bhadra Biju 2026</h6>
+
+
+</footer>
+
+</body>
+</html>
